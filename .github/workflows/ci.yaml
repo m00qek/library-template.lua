@@ -1,0 +1,22 @@
+name: Lua CI
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Setup ‘lua’
+      uses: leafo/gh-actions-lua@v8
+      with:
+        luaVersion: "5.1.5"
+
+    - name: Setup ‘luarocks’
+      uses: leafo/gh-actions-luarocks@v4
+
+    - name: Run tests
+      run: luarocks test
