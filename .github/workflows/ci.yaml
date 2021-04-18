@@ -18,5 +18,11 @@ jobs:
     - name: Setup ‘luarocks’
       uses: leafo/gh-actions-luarocks@v4
 
+    - name: Install dependencies
+      # This is a *hack* to install all runtime/test deps without running the
+      # tests. The idea is to have a better output when there is some error
+      # on dependency installation
+      run: luarocks test -- --version
+
     - name: Run tests
       run: luarocks test
