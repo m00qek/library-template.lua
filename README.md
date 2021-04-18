@@ -1,6 +1,6 @@
 library-template.lua
 ===
-![Continuous Integration][ci]
+[![Continuous Integration][ci]][ciruns]
 
 A template to create pure [Lua][lua] libraries
 
@@ -55,3 +55,4 @@ For the next releases remember that you'll need to modify and copy/rename the
 [luassert]: https://github.com/Olivine-Labs/luassert
 [matcher_combinators]: https://github.com/m00qek/matcher_combinators.lua
 [ci]: https://github.com/m00qek/library-template.lua/actions/workflows/ci.yaml/badge.svg
+[ciruns]: https://github.com/m00qek/library-template.lua/actions/workflows/ci.yaml
