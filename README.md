@@ -30,16 +30,16 @@ $ find spec/ src/ -name '*.lua' | entr luarocks test --local
 
 ## Publishing
 
-Your library must be hosted on a public available git server like
-[github][github], [gitlab][gitlab], [sourcehut][sourcehut], etc. You'll also
-need an account in [LuaRocks][luarocks].
+Your library must be hosted on [github][github] before making the first release.
+First, create a LuaRocks account and generate [a new API key][luarocks-key].
+This key must be used *exclusively* by the `release` [Github Action][release],
+so copy and add it to the Secrets of your repo under the name `LUAROCKS_KEY`.
 
 For the first release you just need to run the following commands:
 
 ```bash
 $ git tag v0.1.0
 $ git push --tags
-$ luarocks upload
 ```
 
 For the next releases remember that you'll need to modify and copy/rename the
@@ -48,11 +48,11 @@ For the next releases remember that you'll need to modify and copy/rename the
 [lua]: https://www.lua.org/
 [entr]: https://eradman.com/entrproject/
 [github]: https://github.com/
-[gitlab]: https://about.gitlab.com/
 [luarocks]: https://luarocks.org/
-[sourcehut]: https://sr.ht/
+[luarocks-key]: https://luarocks.org/settings/api-keys
 [busted]: https://olivinelabs.com/busted/
 [luassert]: https://github.com/Olivine-Labs/luassert
 [matcher_combinators]: https://github.com/m00qek/matcher_combinators.lua
 [ci]: https://github.com/m00qek/library-template.lua/actions/workflows/ci.yaml/badge.svg
 [ciruns]: https://github.com/m00qek/library-template.lua/actions/workflows/ci.yaml
+[release]: .github/workflows/release.yaml
