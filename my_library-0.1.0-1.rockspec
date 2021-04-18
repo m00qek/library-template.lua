@@ -4,7 +4,7 @@ version = "0.1.0-1"
 rockspec_format = "3.0"
 
 source = {
-   url = "git://github.com/my_user/my_library.lua",
+   url = "git://github.com/m00qek/library-template.lua",
    tag = "v0.1.0"
 }
 
