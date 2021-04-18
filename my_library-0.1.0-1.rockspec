@@ -30,6 +30,6 @@ test = {
 build = {
    type = "builtin",
    modules = {
-      ["my_library"] = "src/mylibrary.lua"
+      ["my_library"] = "src/my_library.lua"
    }
 }
