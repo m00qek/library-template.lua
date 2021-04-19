@@ -1,6 +1,7 @@
 library-template.lua
 ===
-[![Continuous Integration][ci]][ciruns]
+[![Integration][integration-badge]][integration-runs]
+[![LuaRocks][luarocks-badge]][luarocks-package]
 
 A template to create pure [Lua][lua] libraries
 
@@ -53,6 +54,9 @@ For the next releases remember that you'll need to modify and copy/rename the
 [busted]: https://olivinelabs.com/busted/
 [luassert]: https://github.com/Olivine-Labs/luassert
 [matcher_combinators]: https://github.com/m00qek/matcher_combinators.lua
-[ci]: https://github.com/m00qek/library-template.lua/actions/workflows/integration.yml/badge.svg
-[ciruns]: https://github.com/m00qek/library-template.lua/actions/workflows/integration.yml
 [release]: .github/workflows/release.yaml
+
+[integration-badge]: https://github.com/m00qek/library-template.lua/actions/workflows/integration.yml/badge.svg
+[integration-runs]: https://github.com/m00qek/library-template.lua/actions/workflows/integration.yml
+[luarocks-badge]: https://img.shields.io/luarocks/v/m00qek/my_library?style=plastic
+[luarocks-packages]: https://luarocks.org/modules/m00qek/my_library
