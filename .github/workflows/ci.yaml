@@ -50,7 +50,9 @@ jobs:
 
   release:
     name: Release on LuaRocks
+    needs: test
     if: github.event_name == 'release' && github.event.action == 'created'
 
+    steps:
     - name: Publish
       run: luarocks upload *.rockspec --temp-key ${{ secrets.LUAROCKS_KEY }}
