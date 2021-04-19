@@ -6,7 +6,8 @@ on:
     - v*
 
 jobs:
-  Release:
+  release:
+    name: Release on LuaRocks
     runs-on: ubuntu-latest
 
     steps:
@@ -25,7 +26,12 @@ jobs:
       # This is a *hack* to install all runtime/test deps without running the
       # tests. The idea is to have a better output when there is some error
       # on dependency installation
-      run: luarocks test -- --version
+      run: |
+        luarocks install luacheck
+        luarocks test -- --version
+
+    - name: Run linter
+      run: luacheck src/ spec/
 
     - name: Run tests
       run: luarocks test
