@@ -4,6 +4,11 @@ on: [push, pull_request]
 
 jobs:
   Test:
+    strategy:
+      fail-fast: false
+      matrix:
+        version: ["5.4", "5.3", "5.2", "5.1", "luajit", "luajit-openresty"]
+
     runs-on: ubuntu-latest
 
     steps:
@@ -17,6 +22,15 @@ jobs:
 
     - name: Setup ‘luarocks’
       uses: leafo/gh-actions-luarocks@v4
+
+    - name: Cache Lua machinery
+      uses: actions/cache@v2
+      with:
+        path: |
+          .install
+          .lua
+          .luarocks
+        key: lua-${{ matrix.version }}-${{ hashFiles('*.rockspec') }}
 
     - name: Install dependencies
       # This is a *hack* to install all runtime/test deps without running the
