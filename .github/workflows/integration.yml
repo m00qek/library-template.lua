@@ -1,4 +1,4 @@
-name: Continuous Integration
+name: Integration
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   test:
-    name: Test using Lua
+    name: Tests on Lua
     strategy:
       fail-fast: false
       matrix:
