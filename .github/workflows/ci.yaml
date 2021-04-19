@@ -1,9 +1,16 @@
 name: Continuous Integration
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  release:
+    types: [ published ]
 
 jobs:
-  Test:
+  test:
+    name: Test using Lua
     strategy:
       fail-fast: false
       matrix:
@@ -40,3 +47,10 @@ jobs:
 
     - name: Run tests
       run: luarocks test
+
+  release:
+    name: Release on LuaRocks
+    if: github.event_name == 'release' && github.event.action == 'created'
+
+    - name: Publish
+      run: luarocks upload *.rockspec --temp-key ${{ secrets.LUAROCKS_KEY }}
