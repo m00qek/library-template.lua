@@ -53,6 +53,6 @@ For the next releases remember that you'll need to modify and copy/rename the
 [busted]: https://olivinelabs.com/busted/
 [luassert]: https://github.com/Olivine-Labs/luassert
 [matcher_combinators]: https://github.com/m00qek/matcher_combinators.lua
-[ci]: https://github.com/m00qek/library-template.lua/actions/workflows/ci.yml/badge.svg
-[ciruns]: https://github.com/m00qek/library-template.lua/actions/workflows/ci.yaml
+[ci]: https://github.com/m00qek/library-template.lua/actions/workflows/integration.yml/badge.svg
+[ciruns]: https://github.com/m00qek/library-template.lua/actions/workflows/integration.yml
 [release]: .github/workflows/release.yaml
