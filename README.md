@@ -1,7 +1,7 @@
 library-template.lua
 ===
 [![Integration][integration-badge]][integration-runs]
-[![LuaRocks][luarocks-badge]][luarocks-package]
+[![LuaRocks][luarocks-badge]][luarocks-packages]
 
 A template to create pure [Lua][lua] libraries
 
